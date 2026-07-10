@@ -5,7 +5,7 @@ export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("aether-cookie-consent");
+    const consent = localStorage.getItem("munichre-cookie-consent");
     if (!consent) {
       const timer = setTimeout(() => {
         setIsVisible(true);
@@ -15,14 +15,14 @@ export default function CookieBanner() {
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem("aether-cookie-consent", "accepted");
+    localStorage.setItem("munichre-cookie-consent", "accepted");
     setIsVisible(false);
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 right-6 sm:left-6 sm:right-auto sm:max-w-md z-40 bg-slate-900/95 backdrop-blur-xl border border-slate-800 p-5 rounded-2xl shadow-2xl animate-in slide-in-from-bottom duration-300 font-sans" id="aether-cookie-consent-banner">
+    <div className="fixed bottom-6 left-6 right-6 sm:left-6 sm:right-auto sm:max-w-md z-40 bg-slate-900/95 backdrop-blur-xl border border-slate-800 p-5 rounded-2xl shadow-2xl animate-in slide-in-from-bottom duration-300 font-sans" id="munichre-cookie-consent-banner">
       <div className="flex items-start space-x-3.5">
         <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl mt-0.5">
           <ShieldCheck className="w-5.5 h-5.5" />
@@ -38,7 +38,7 @@ export default function CookieBanner() {
             </button>
           </div>
           <p className="text-[11px] text-slate-300 leading-relaxed">
-            Aether Wealth & Risk Solutions uses proprietary telemetry cookies, analytical logging, and risk mapping tools to secure our site and analyze performance. By clicking "Accept All", you consent to our global risk cookies policy.
+            Munich RE uses proprietary telemetry cookies, analytical logging, and risk mapping tools to secure our site and analyze performance. By clicking "Accept All", you consent to our global risk cookies policy.
           </p>
           <div className="mt-3.5 flex items-center space-x-2.5">
             <button

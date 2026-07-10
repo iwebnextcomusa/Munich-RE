@@ -1,6 +1,6 @@
 {
-  "name": "Aether Wealth Corporate Portal",
-  "description": "Enterprise-grade corporate portal for Aether Wealth & Risk Solutions (Reinsurance, Primary Insurance, and Risk Consulting), featuring interactive 3D risk models and a secure AI Chatbot.",
+  "name": "Munich RE Corporate Portal",
+  "description": "Enterprise-grade corporate portal for Munich RE (Reinsurance, Primary Insurance via ERGO, and Asset Management via MEAG), featuring interactive 3D risk models and a secure AI Chatbot.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

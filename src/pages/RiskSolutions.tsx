@@ -73,7 +73,7 @@ export default function RiskSolutions() {
                 <Cpu className="w-5.5 h-5.5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white tracking-wide uppercase">Aether Risk Intelligence Simulator</h3>
+                <h3 className="text-lg font-bold text-white tracking-wide uppercase">Munich RE Risk Intelligence Simulator</h3>
                 <p className="text-[10px] text-slate-400 font-mono">MODEL v4.81-A • SECURED GULF SCENARIO ENGINE</p>
               </div>
             </div>

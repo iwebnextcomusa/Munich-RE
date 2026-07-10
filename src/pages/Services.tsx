@@ -300,7 +300,7 @@ export default function Services() {
               <p className="text-[11px] text-slate-400 mt-0.5">Connect directly with our Slidell-based risk advisory panel.</p>
             </div>
             <a
-              href="mailto:hr.ericwilliams@gmail.com?subject=Aether Underwriting Inquiry"
+              href="mailto:hr.ericwilliams@gmail.com?subject=Munich RE Underwriting Inquiry"
               className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all flex items-center space-x-2 cursor-pointer self-stretch sm:self-auto justify-center text-center"
             >
               <span>Initiate Audit Request</span>
@@ -315,7 +315,7 @@ export default function Services() {
         <div className="text-center space-y-2">
           <HelpCircle className="w-10 h-10 text-cyan-400 mx-auto" />
           <h3 className="text-2xl font-extrabold text-white">Underwriting FAQs</h3>
-          <p className="text-xs text-slate-400">Common structural inquiries regarding Aether's reinsurance limits.</p>
+          <p className="text-xs text-slate-400">Common structural inquiries regarding Munich RE's reinsurance limits.</p>
         </div>
 
         <div className="space-y-4">

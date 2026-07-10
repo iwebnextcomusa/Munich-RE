@@ -254,7 +254,7 @@ export default function Industries() {
 
             {/* Solutions */}
             <div className="bg-slate-950 p-6 rounded-2xl border border-slate-900 space-y-4">
-              <h4 className="text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest border-b border-slate-900 pb-3">Aether Solutions</h4>
+              <h4 className="text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest border-b border-slate-900 pb-3">Munich RE Solutions</h4>
               <ul className="space-y-4">
                 {activeIndDetail.solutions.map((sol, idx) => (
                   <li key={idx} className="space-y-1">

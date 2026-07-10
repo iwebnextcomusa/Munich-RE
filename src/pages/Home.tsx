@@ -15,12 +15,12 @@ export default function Home({ setActiveTab }: HomeProps) {
 
   const testimonials = [
     {
-      quote: "Aether's parametric storm risk modeling saved our Louisiana manufacturing logistics pipeline from complete capital freezing after last season's weather disruptions. Their claims settled inside two days.",
+      quote: "Munich RE's parametric storm risk modeling saved our Louisiana manufacturing logistics pipeline from complete capital freezing after last season's weather disruptions. Their claims settled inside two days.",
       author: "Chief Risk Officer",
       company: "Gulf Energy & Transport Corp"
     },
     {
-      quote: "By placing their treaty directly behind our primary casualty portfolio, Aether Wealth unlocked critical balance sheet capacity, allowing us to expand our construction lines across the southern United States.",
+      quote: "By placing their treaty directly behind our primary casualty portfolio, Munich RE unlocked critical balance sheet capacity, allowing us to expand our construction lines across the southern United States.",
       author: "VP of Specialty Programs",
       company: "Atlas Insurance Alliance"
     }
@@ -44,7 +44,7 @@ export default function Home({ setActiveTab }: HomeProps) {
           </h1>
           
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Aether Wealth & Risk Solutions coordinates world-class reinsurance capacity, robust primary insurance policies, and parametric climate models to safeguard multinational balance sheets against tomorrow's extreme hazards.
+            Munich RE coordinates world-class reinsurance capacity, robust primary insurance policies (ERGO), and parametric climate models to safeguard multinational balance sheets against tomorrow's extreme hazards.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 pt-2 w-full sm:w-auto">
@@ -271,7 +271,7 @@ export default function Home({ setActiveTab }: HomeProps) {
           <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Coordinate with Core Underwriters</h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Aether's corporate risk structures require comprehensive evaluation of underlying schedules, asset logs, and geological exposures. Initiate a diagnostic audit with our core team today.
+            Munich RE's corporate risk structures require comprehensive evaluation of underlying schedules, asset logs, and geological exposures. Initiate a diagnostic audit with our core team today.
           </p>
           <div className="flex flex-wrap justify-center gap-3.5 pt-2">
             <button 

@@ -87,8 +87,8 @@ export default function Navbar({ activeTab, setActiveTab, onSearch }: NavbarProp
             <div className="w-3.5 h-3.5 bg-white transform -rotate-45"></div>
           </div>
           <div>
-            <span className="text-lg font-bold tracking-tight uppercase italic text-slate-100 group-hover:text-blue-400 transition-colors">Aether Wealth</span>
-            <span className="text-[10px] block text-slate-500 font-mono -mt-1.5 tracking-widest uppercase font-semibold">Risk Solutions</span>
+            <span className="text-lg font-bold tracking-tight uppercase italic text-slate-100 group-hover:text-blue-400 transition-colors">Munich RE</span>
+            <span className="text-[10px] block text-slate-500 font-mono -mt-1.5 tracking-widest uppercase font-semibold">Reinsurance & ERGO</span>
           </div>
         </div>
 
@@ -140,7 +140,7 @@ export default function Navbar({ activeTab, setActiveTab, onSearch }: NavbarProp
               <button 
                 onClick={() => setSearchOpen(true)} 
                 className="p-2 text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg transition-colors cursor-pointer"
-                title="Search Aether portal"
+                title="Search Munich RE portal"
               >
                 <Search className="w-4.5 h-4.5" />
               </button>

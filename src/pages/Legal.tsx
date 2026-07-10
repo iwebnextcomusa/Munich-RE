@@ -13,12 +13,12 @@ export default function Legal({ activeSection, setActiveTab }: LegalProps) {
         <div className="border-b border-slate-900 pb-4">
           <span className="text-[10px] font-bold font-mono text-cyan-400 uppercase tracking-widest">Legal & Solvency</span>
           <h1 className="text-3xl font-extrabold text-white mt-1">Privacy & Data Governance Policy</h1>
-          <p className="text-xs text-slate-500 font-mono mt-1">Last Updated: July 10, 2026 • Aether Security Compliance</p>
+          <p className="text-xs text-slate-500 font-mono mt-1">Last Updated: July 10, 2026 • Munich RE Security Compliance</p>
         </div>
 
         <div className="space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
           <p>
-            Aether Wealth & Risk Solutions (formerly Munich RE's Louisiana operational enterprise pivot) is committed to protecting the telemetry, personal identifiers, and underwriting documents of our brokers, primary carriers, and corporate clients.
+            Munich RE is committed to protecting the telemetry, personal identifiers, and underwriting documents of our brokers, primary carriers, and corporate clients.
           </p>
 
           <h3 className="text-base font-bold text-white uppercase tracking-wider font-mono">1. Information We Secure</h3>
@@ -51,7 +51,7 @@ export default function Legal({ activeSection, setActiveTab }: LegalProps) {
 
         <div className="space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
           <p>
-            The structural calculations, meteorology simulations, and risk indicators presented throughout the Aether Wealth portal are provided for educational and pre-underwriting analysis only.
+            The structural calculations, meteorology simulations, and risk indicators presented throughout the Munich RE portal are provided for educational and pre-underwriting analysis only.
           </p>
 
           <h3 className="text-base font-bold text-white uppercase tracking-wider font-mono">1. Binding Underwritings Require Authorization</h3>
@@ -66,7 +66,7 @@ export default function Legal({ activeSection, setActiveTab }: LegalProps) {
 
           <h3 className="text-base font-bold text-white uppercase tracking-wider font-mono">3. Trademark Trademark Pivots</h3>
           <p>
-            Munich RE is a registered trademark of Munich Reinsurance Company. This portal operates under the pivoted, distinct placeholder branding of <strong>Aether Wealth & Risk Solutions</strong>, an independent operational simulation located in Slidell, Louisiana. For any inquiries regarding compliance, contact our core team directly at <strong>603-513-8973</strong>.
+            Munich RE is the world's leading reinsurance provider. This portal operates as an independent operational simulation for our regional operations, based in Slidell, Louisiana. For any inquiries regarding compliance, contact our core team directly at <strong>603-513-8973</strong>.
           </p>
         </div>
       </div>
@@ -140,7 +140,7 @@ export default function Legal({ activeSection, setActiveTab }: LegalProps) {
         <h1 className="text-3xl font-extrabold text-white tracking-tight font-mono">404 ERROR</h1>
         <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider font-mono">Telemetry Coordinates Lost</h2>
         <p className="text-xs text-slate-400 leading-relaxed">
-          The requested coordinate grid or server file path is not mapped on Aether's active index logs.
+          The requested coordinate grid or server file path is not mapped on Munich RE's active index logs.
         </p>
       </div>
       <div className="pt-4">
@@ -148,7 +148,7 @@ export default function Legal({ activeSection, setActiveTab }: LegalProps) {
           onClick={() => setActiveTab("home")}
           className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-xl cursor-pointer transition-all flex items-center justify-center mx-auto space-x-2"
         >
-          <span>Return to Slidell HQ Map</span>
+          <span>Return to Munich RE HQ Map</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

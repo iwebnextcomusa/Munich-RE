@@ -27,8 +27,8 @@ export default function Footer({ setActiveTab }: FooterProps) {
               <div className="w-3.5 h-3.5 bg-white transform -rotate-45"></div>
             </div>
             <div>
-              <span className="text-lg font-bold tracking-tight uppercase italic text-slate-100">Aether Wealth</span>
-              <span className="text-[10px] block text-slate-500 font-mono -mt-1.5 tracking-widest uppercase font-semibold">Risk Solutions</span>
+              <span className="text-lg font-bold tracking-tight uppercase italic text-slate-100">Munich RE</span>
+              <span className="text-[10px] block text-slate-500 font-mono -mt-1.5 tracking-widest uppercase font-semibold">Reinsurance & ERGO</span>
             </div>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -138,7 +138,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
           <button onClick={() => setActiveTab("careers")} className="hover:text-slate-300 transition-colors cursor-pointer">Careers</button>
         </div>
         <p className="text-[11px] text-slate-600 font-mono">
-          &copy; {new Date().getFullYear()} Aether Wealth & Risk Solutions. All rights reserved. Registered trademark pivots of corporate entities.
+          &copy; {new Date().getFullYear()} Munich RE. All rights reserved. Registered trademark of Munich Reinsurance Company.
         </p>
         <div className="text-[11px] text-slate-400 font-sans pt-1">
           Developed by <a href="https://iwebnext.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-cyan-400 font-semibold underline transition-colors">iWebNext</a>

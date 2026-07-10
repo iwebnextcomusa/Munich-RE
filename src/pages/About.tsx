@@ -47,7 +47,7 @@ export default function About() {
         <span className="text-[10px] font-bold font-mono text-blue-400 border border-blue-500/20 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-wider">Corporate Profile</span>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Our Mission & Global Solvency</h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-          Operating as an enterprise leader in reinsurance, primary insurance coverage, and data-driven risk consulting, Aether Wealth and Risk Solutions acts as a shock absorber for global commerce. Headquartered in Slidell, Louisiana, we specialize in absorbing extreme risks—from hurricane surges to catastrophic cybersecurity events—so primary insurers can grow confidently.
+          Operating as an enterprise leader in reinsurance, primary insurance coverage via ERGO, and data-driven risk consulting, Munich RE acts as a shock absorber for global commerce. With our regional Gulf Coast operational center in Slidell, Louisiana, we specialize in absorbing extreme risks—from hurricane surges to catastrophic cybersecurity events—so primary insurers can grow confidently.
         </p>
       </section>
 

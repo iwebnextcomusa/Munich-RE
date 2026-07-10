@@ -33,7 +33,7 @@ export default function Insights({ searchQuery, setSearchQuery }: InsightsProps)
       setDownloadSuccess(true);
       // Create a temporary simulated text download
       const element = document.createElement("a");
-      const file = new Blob([`Aether Wealth & Risk Solutions\nPublication: ${title}\n\nDisclaimer: This is a generated broker brochure preview provided for structural analysis. Please coordinate with core underwriters at 603-513-8973 for official documents.`], {type: 'text/plain'});
+      const file = new Blob([`Munich RE\nPublication: ${title}\n\nDisclaimer: This is a generated broker brochure preview provided for structural analysis. Please coordinate with core underwriters at 603-513-8973 for official documents.`], {type: 'text/plain'});
       element.href = URL.createObjectURL(file);
       element.download = `${title.replace(/ /g, "_")}_Brochure.txt`;
       document.body.appendChild(element);
@@ -144,7 +144,7 @@ export default function Insights({ searchQuery, setSearchQuery }: InsightsProps)
             </div>
           </div>
           <button
-            onClick={() => handleDownloadBrochure("Aether_Global_Risk_Guide_2026")}
+            onClick={() => handleDownloadBrochure("MunichRe_Global_Risk_Guide_2026")}
             className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-xl cursor-pointer transition-colors flex items-center space-x-2 self-stretch sm:self-auto justify-center"
           >
             <Download className="w-4 h-4" />
@@ -197,13 +197,13 @@ export default function Insights({ searchQuery, setSearchQuery }: InsightsProps)
               {/* Content */}
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line">
                 {selectedArticle.content}
-                {"\n\n[Full paper content available inside our printed treaties. To request access to Aether's internal hydrology database, geospatial simulations, or specific historical storm wind portfolios, please contact our Managing Director Eric Williams in Slidell, LA.]"}
+                {"\n\n[Full paper content available inside our printed treaties. To request access to Munich RE's internal hydrology database, geospatial simulations, or specific historical storm wind portfolios, please contact our Managing Director Eric Williams in Slidell, LA.]"}
               </p>
             </div>
 
             {/* Modal Footer */}
             <div className="p-5 border-t border-slate-800 bg-slate-950 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <span className="text-[10px] font-mono text-slate-500">Document ID: AE-{selectedArticle.id.toUpperCase()}-2026</span>
+              <span className="text-[10px] font-mono text-slate-500">Document ID: MR-{selectedArticle.id.toUpperCase()}-2026</span>
               <div className="flex items-center space-x-2.5 w-full sm:w-auto justify-end">
                 {downloadSuccess ? (
                   <div className="flex items-center space-x-1 text-emerald-400 text-xs font-bold bg-emerald-500/10 py-2 px-4 rounded-xl border border-emerald-500/20">

@@ -23,7 +23,7 @@ export default function Careers() {
   };
 
   const handleFileUpload = () => {
-    setFormData((prev) => ({ ...prev, fileName: "Resume_Aether_Transfer_Ready.pdf" }));
+    setFormData((prev) => ({ ...prev, fileName: "Resume_MunichRe_Transfer_Ready.pdf" }));
   };
 
   const benefits = [
@@ -49,7 +49,7 @@ export default function Careers() {
       {/* Title */}
       <section className="text-center max-w-4xl mx-auto pt-12 space-y-4">
         <span className="text-[10px] font-bold font-mono text-blue-400 border border-blue-500/20 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">Talent Acquisition</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Join Aether's Risk Analysts</h1>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Join Munich RE's Risk Analysts</h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
           Pioneer parametric weather triggers and cyber threat telemetry. Work with Dr. Marcus Vance, Elena Rostov, and our team in Slidell, Louisiana.
         </p>
@@ -138,7 +138,7 @@ export default function Careers() {
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 bg-slate-950/60 p-5 rounded-2xl border border-slate-900 text-center space-y-2">
         <h4 className="text-[10px] font-bold font-mono text-slate-500 uppercase tracking-widest">Equal Opportunity Employer (EOE)</h4>
         <p className="text-[10px] text-slate-500 leading-relaxed">
-          Aether Wealth & Risk Solutions provides equal employment opportunities to all team members and candidates without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity, or any other characteristic protected by federal, state, or regional rules.
+          Munich RE provides equal employment opportunities to all team members and candidates without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity, or any other characteristic protected by federal, state, or regional rules.
         </p>
       </section>
 
@@ -285,7 +285,7 @@ export default function Careers() {
                       <textarea
                         value={formData.coverLetter}
                         onChange={(e) => setFormData({...formData, coverLetter: e.target.value})}
-                        placeholder="Detail how your actuarial, weather, or security background aligns with Aether..."
+                        placeholder="Detail how your actuarial, weather, or security background aligns with Munich RE..."
                         rows={3}
                         className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-blue-500 font-sans"
                       />

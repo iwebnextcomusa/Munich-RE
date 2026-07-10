@@ -11,7 +11,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I am your Aether Wealth Virtual Risk Analyst. How can I assist you with reinsurance, catastrophe risk modeling, or our primary insurance solutions today?",
+      content: "Hello! I am your Munich RE Virtual Risk Analyst. How can I assist you with reinsurance, catastrophe risk modeling, or ERGO primary insurance solutions today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -81,7 +81,7 @@ export default function Chatbot() {
         <button
           onClick={() => setIsOpen(true)}
           className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full text-white shadow-lg shadow-blue-500/20 hover:scale-110 active:scale-95 transition-transform duration-200 cursor-pointer relative group"
-          title="Speak with Aether AI Analyst"
+          title="Speak with Munich RE AI Analyst"
         >
           <MessageSquare className="w-6 h-6 animate-pulse" />
           <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -105,7 +105,7 @@ export default function Chatbot() {
               </div>
               <div>
                 <div className="flex items-center space-x-1">
-                  <h3 className="font-semibold text-sm text-white tracking-wide">Aether AI Risk Analyst</h3>
+                  <h3 className="font-semibold text-sm text-white tracking-wide">Munich RE AI Risk Analyst</h3>
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
                 </div>
                 <div className="flex items-center space-x-1.5">
@@ -139,7 +139,7 @@ export default function Chatbot() {
                   {msg.role === "assistant" && (
                     <div className="flex items-center space-x-1 mb-1 text-[10px] text-cyan-400 font-mono font-bold tracking-wider uppercase">
                       <Bot className="w-3 h-3" />
-                      <span>Aether Intelligence</span>
+                      <span>Munich RE Intelligence</span>
                     </div>
                   )}
                   <p className="whitespace-pre-line">{msg.content}</p>

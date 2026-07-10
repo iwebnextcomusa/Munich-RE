@@ -243,7 +243,7 @@ export const INSIGHTS_DATA: BlogPostItem[] = [
     date: "April 10, 2026",
     author: "Robert Chen, Director of Marine Cargo Underwriting",
     summary: "Analyzing alternative routes, canal delays, and geopolitical friction points to structure contingent cargo business interruption coverages.",
-    content: "Standard marine hull coverage leaves deep gaps when ships are diverted or delayed by weeks. Aether's contingent transit models combine cargo physical loss indemnities with parametric delay policies to guarantee cash flow even when ports are backlogged or shipping channels are obstructed...",
+    content: "Standard marine hull coverage leaves deep gaps when ships are diverted or delayed by weeks. Munich RE's contingent transit models combine cargo physical loss indemnities with parametric delay policies to guarantee cash flow even when ports are backlogged or shipping channels are obstructed...",
     readTime: "9 min read"
   }
 ];
@@ -251,8 +251,8 @@ export const INSIGHTS_DATA: BlogPostItem[] = [
 export const FAQ_DATA: FAQItem[] = [
   {
     category: "General",
-    question: "How does Aether Wealth differ from standard retail insurance brokers?",
-    answer: "Aether Wealth operates on an enterprise scale as a reinsurer, primary corporate carrier, and advanced risk advisory team. We underwrite high-capacity corporate exposures, provide substantial treaty backing for primary insurers, and engineer analytical risk intelligence models, rather than simply distributing third-party retail packages."
+    question: "How does Munich RE differ from standard retail insurance brokers?",
+    answer: "Munich RE operates on an enterprise scale as the world's leading provider of reinsurance, primary insurance via ERGO, and asset management via MEAG. We underwrite high-capacity corporate exposures, provide substantial treaty backing for primary insurers, and engineer analytical risk intelligence models, rather than simply distributing third-party retail packages."
   },
   {
     category: "Solutions",
@@ -261,8 +261,8 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     category: "Location",
-    question: "Why is your operational center located in Slidell, Louisiana?",
-    answer: "Our location in Slidell, Louisiana places us in the heart of the Gulf Coast, a region uniquely exposed to weather-related hazards, flood dynamics, and energy transition developments. This direct experience fuels our climate research models and allows us to test risk resilience solutions on the frontlines of natural catastrophe management."
+    question: "Why is your regional operational center located in Slidell, Louisiana?",
+    answer: "Our location in Slidell, Louisiana serves as a key regional hub for Munich RE's Gulf Coast Underwriting and Catastrophe modeling. Being in a region uniquely exposed to weather-related hazards, flood dynamics, and energy transition developments allows us to test risk resilience solutions on the frontlines of natural catastrophe management and refine our advanced climate research models."
   }
 ];
 
@@ -273,7 +273,7 @@ export const CAREERS_DATA: JobOpening[] = [
     department: "Risk Analytics Group",
     location: "Slidell, Louisiana (Hybrid)",
     type: "Full-Time",
-    description: "Join our core climate and weather simulation team. You will leverage physical meteorology data, historical hydrology grids, and modern statistical modeling tools to construct premium pricing treaties and predictive exposure maps.",
+    description: "Join our core climate and weather simulation team under Munich RE's global risk research division. You will leverage physical meteorology data, historical hydrology grids, and modern statistical modeling tools to construct premium pricing treaties and predictive exposure maps.",
     requirements: [
       "Master's or Ph.D. in Meteorology, Hydrology, Actuarial Sciences, or Geophysics",
       "3+ years experience with modelers like RMS, AIR, or open-source equivalents",
@@ -291,7 +291,7 @@ export const CAREERS_DATA: JobOpening[] = [
     department: "Digital & Specialty Risk Division",
     location: "Slidell, Louisiana or Remote (US)",
     type: "Full-Time",
-    description: "Design and implement custom external telemetry diagnostic tools that scan our corporate policyholders' networks. Help businesses detect misconfigured ports, exposed databases, and software vulnerabilities before underwriters issue policies.",
+    description: "Design and implement custom external telemetry diagnostic tools that scan our corporate policyholders' networks. Help Munich RE detect misconfigured ports, exposed databases, and software vulnerabilities before underwriters issue policies.",
     requirements: [
       "Strong background in Offensive Security, Threat Hunting, or Network Vulnerability Scanning",
       "Familiarity with cloud security compliance frameworks (AWS, GCP, Azure)",

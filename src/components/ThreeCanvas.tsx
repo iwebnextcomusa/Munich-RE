@@ -24,7 +24,7 @@ export default function ThreeCanvas() {
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
 
-    // Create a central holographic sphere representing Aether's Risk Network
+    // Create a central holographic sphere representing Munich RE's Risk Network
     const globeGroup = new THREE.Group();
     scene.add(globeGroup);
 
