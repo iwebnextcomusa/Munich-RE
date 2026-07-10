@@ -52,28 +52,37 @@ export default function App() {
     switch (activeTab) {
       case "home":
         return <Home setActiveTab={setActiveTab} />;
-      case "about":
-        return <About />;
-      case "services":
-        return <Services />;
-      case "industries":
-        return <Industries />;
-      case "risk-solutions":
-        return <RiskSolutions />;
-      case "insights":
-        return <Insights searchQuery={searchQuery} setSearchQuery={setSearchQuery} />;
-      case "careers":
-        return <Careers />;
-      case "contact":
-        return <Contact />;
-      case "privacy":
-        return <Legal activeSection="privacy" setActiveTab={setActiveTab} />;
-      case "terms":
-        return <Legal activeSection="terms" setActiveTab={setActiveTab} />;
-      case "sitemap":
-        return <Legal activeSection="sitemap" setActiveTab={setActiveTab} />;
       default:
-        return <Legal activeSection="404" setActiveTab={setActiveTab} />;
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            {(() => {
+              switch (activeTab) {
+                case "about":
+                  return <About />;
+                case "services":
+                  return <Services />;
+                case "industries":
+                  return <Industries />;
+                case "risk-solutions":
+                  return <RiskSolutions />;
+                case "insights":
+                  return <Insights searchQuery={searchQuery} setSearchQuery={setSearchQuery} />;
+                case "careers":
+                  return <Careers />;
+                case "contact":
+                  return <Contact />;
+                case "privacy":
+                  return <Legal activeSection="privacy" setActiveTab={setActiveTab} />;
+                case "terms":
+                  return <Legal activeSection="terms" setActiveTab={setActiveTab} />;
+                case "sitemap":
+                  return <Legal activeSection="sitemap" setActiveTab={setActiveTab} />;
+                default:
+                  return <Legal activeSection="404" setActiveTab={setActiveTab} />;
+              }
+            })()}
+          </div>
+        );
     }
   };
 
@@ -87,7 +96,7 @@ export default function App() {
       />
 
       {/* Main Dynamic View Area */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <main className="flex-1 w-full">
         {renderTabContent()}
       </main>
 

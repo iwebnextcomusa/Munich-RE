@@ -29,19 +29,19 @@ function getGeminiClient(): GoogleGenAI {
   return ai;
 }
 
-// System instructions for our Aether Wealth assistant
-const SYSTEM_INSTRUCTION = `You are the Aether Wealth Virtual Risk Analyst, a sophisticated and professional AI assistant for Aether Wealth (formerly Munich RE's Louisiana enterprise pivot). 
-Aether Wealth specializes in Reinsurance, Primary Insurance, and comprehensive Risk Solutions (including Climate Risk, Natural Catastrophes, Casualty Risk, Cyber Risk, and Risk Consulting).
+// System instructions for our Munich RE assistant
+const SYSTEM_INSTRUCTION = `You are the Munich RE Virtual Risk Analyst, a sophisticated and professional AI assistant for Munich RE. 
+Munich RE is the world's leading reinsurance provider, also offering primary insurance via ERGO and asset management via MEAG.
 Our coordinates:
-- Company Name: Aether Wealth (or Aether Wealth & Risk Solutions)
-- Location: Slidell, Louisiana
+- Company Name: Munich RE
+- Location: Slidell, Louisiana (Gulf Coast regional center)
 - Phone: 603-513-8973
 - Email: hr.ericwilliams@gmail.com
 - Business Hours: Monday to Friday, 8:00 AM to 6:00 PM CST.
 
 Maintain a confident, highly authoritative, secure, and helpful tone suitable for a global reinsurance and risk management organization. 
-Answer queries about Aether Wealth's reinsurance solutions, primary insurance, corporate/business risk consulting, claims management, predictive analytics, climate risk models, careers, and global capabilities.
-If questions are unrelated to insurance or risk management, answer politely but guide them back to Aether Wealth's world-class offerings. Keep answers concise, highly structured, and professional.`;
+Answer queries about Munich RE's reinsurance solutions, primary insurance (ERGO), corporate/business risk consulting, claims management, predictive analytics, climate risk models, careers, and global capabilities.
+If questions are unrelated to insurance or risk management, answer politely but guide them back to Munich RE's world-class offerings. Keep answers concise, highly structured, and professional.`;
 
 app.post("/api/chat", async (req, res) => {
   try {
@@ -54,9 +54,9 @@ app.post("/api/chat", async (req, res) => {
     if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey.trim() === "") {
       // Return a professional mock/fallback if API key is not present yet
       return res.json({
-        text: `Hello! I am the Aether Wealth Virtual Risk Analyst. Currently, my live AI connection is in sandbox mode because the GEMINI_API_KEY is not yet fully configured in your environment. 
+        text: `Hello! I am the Munich RE Virtual Risk Analyst. Currently, my live AI connection is in sandbox mode because the GEMINI_API_KEY is not yet fully configured in your environment. 
         
-However, as a preview of our services: Aether Wealth & Risk Solutions specializes in enterprise risk management, global reinsurance, climate risk modeling, and advanced actuarial analytics. We are located in Slidell, Louisiana. You can reach our human response team at 603-513-8973 or hr.ericwilliams@gmail.com. 
+However, as a preview of our services: Munich RE specializes in global reinsurance, primary insurance (ERGO), climate risk modeling, and advanced actuarial analytics. Our regional Gulf Coast center is located in Slidell, Louisiana. You can reach our human response team at 603-513-8973 or hr.ericwilliams@gmail.com. 
 
 What risk management inquiries can I assist you with today?`
       });

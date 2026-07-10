@@ -1,11 +1,33 @@
-import { Shield, ArrowRight, Zap, Globe, Cpu, BarChart3, Users, Building2, CheckCircle2 } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { Shield, ArrowRight, Zap, Globe, Cpu, BarChart3, Users, Building2, CheckCircle2, Volume2, VolumeX } from "lucide-react";
 import { SERVICES_DATA, INSIGHTS_DATA } from "../data";
+
+const heroVideoUrl = "https://hyvtahvcdtfxw4jv.public.blob.vercel-storage.com/Create_video_for_Munich_RE_202607102220.mp4";
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
 }
 
 export default function Home({ setActiveTab }: HomeProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.log("Auto-play request failed or was interrupted:", err);
+      });
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const nextMuted = !videoRef.current.muted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
+  };
+
   const stats = [
     { label: "Active Reinsurance Capital", value: "$48B+" },
     { label: "Catastrophe Scenarios Simulated", value: "1.2M+" },
@@ -29,7 +51,46 @@ export default function Home({ setActiveTab }: HomeProps) {
   return (
     <div className="space-y-24 pb-16 font-sans">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 md:pt-24 text-center">
+      <section className="relative overflow-hidden pt-16 md:pt-32 pb-24 text-center isolate">
+        {/* Background Image/Video with elegant overlay */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden pointer-events-none">
+          <video 
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover opacity-75 filter saturate-100 brightness-75"
+          >
+            <source src={heroVideoUrl} type="video/mp4" />
+          </video>
+          {/* Gradients to blend the background video smoothly */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-slate-950/70" />
+        </div>
+
+        {/* Audio Toggle Controls */}
+        <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20">
+          <button
+            onClick={toggleMute}
+            className="group flex items-center space-x-2 bg-slate-950/80 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-slate-300 hover:text-white px-3.5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 backdrop-blur-md shadow-lg cursor-pointer"
+            title={isMuted ? "Unmute background video" : "Mute background video"}
+          >
+            {isMuted ? (
+              <>
+                <VolumeX className="w-4 h-4 text-rose-400 group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-mono tracking-wide text-slate-400">Sound Off</span>
+              </>
+            ) : (
+              <>
+                <Volume2 className="w-4 h-4 text-emerald-400 animate-pulse group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-mono tracking-wide text-emerald-300">Sound On</span>
+              </>
+            )}
+          </button>
+        </div>
+
         {/* Background glow behind centered content */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-blue-500/10 rounded-full blur-[100px] -z-10 animate-pulse pointer-events-none" />
 

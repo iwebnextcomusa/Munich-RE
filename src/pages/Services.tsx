@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShieldCheck, Activity, Globe, Cpu, Zap, Heart, Database, HelpCircle, FileText, Check, ArrowRight } from "lucide-react";
 
 interface ServiceDetail {
@@ -14,6 +14,14 @@ interface ServiceDetail {
 
 export default function Services() {
   const [activeService, setActiveService] = useState("reinsurance");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const servicesList: ServiceDetail[] = [
     {
@@ -202,113 +210,198 @@ export default function Services() {
       </section>
 
       {/* Interactive Sidebar / Tab Interface */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Column: List of Services by Category */}
-        <div className="lg:col-span-4 space-y-6">
-          {categories.map((cat, catIdx) => (
-            <div key={catIdx} className="space-y-2">
-              <h4 className="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-widest px-3">{cat}</h4>
-              <div className="space-y-1">
-                {servicesList
-                  .filter((s) => s.category === cat)
-                  .map((srv) => (
-                    <button
-                      key={srv.id}
-                      onClick={() => setActiveService(srv.id)}
-                      className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider block transition-all cursor-pointer ${
-                        activeService === srv.id
-                          ? "bg-gradient-to-r from-blue-900/60 to-slate-900 border-l-4 border-blue-400 text-white shadow-md font-bold"
-                          : "text-slate-400 hover:text-white hover:bg-slate-900/50"
-                      }`}
+      {isLoading ? (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Skeleton of Services by Category */}
+          <div className="lg:col-span-4 space-y-6">
+            {["Reinsurance & Capital", "Primary & Casualty", "Advisory & Analytics"].map((cat, catIdx) => (
+              <div key={catIdx} className="space-y-3">
+                {/* Category Header Skeleton */}
+                <div className="h-3 bg-slate-800 rounded w-24 ml-3 animate-pulse" />
+                <div className="space-y-2">
+                  {[1, 2, 3].map((srvIdx) => (
+                    <div
+                      key={srvIdx}
+                      className="h-10 bg-slate-900/60 border border-slate-800/40 rounded-xl w-full animate-pulse"
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Column: Skeleton Detailed Service Panel */}
+          <div className="lg:col-span-8 bg-slate-900/40 p-6 sm:p-10 rounded-3xl border border-slate-800/80 space-y-8 min-h-[500px] flex flex-col justify-between">
+            <div className="space-y-6">
+              {/* Category & Title Skeleton */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+                <div className="space-y-3 w-full sm:w-2/3">
+                  <div className="h-2.5 bg-cyan-500/20 rounded w-28 animate-pulse" />
+                  <div className="h-6 bg-slate-800 rounded w-3/4 animate-pulse" />
+                </div>
+                <div className="h-8 bg-blue-500/10 border border-blue-500/20 rounded-lg w-40 animate-pulse" />
+              </div>
+
+              {/* Description Skeleton */}
+              <div className="space-y-2">
+                <div className="h-3.5 bg-slate-800 rounded w-full animate-pulse" />
+                <div className="h-3.5 bg-slate-800 rounded w-11/12 animate-pulse" />
+                <div className="h-3.5 bg-slate-800 rounded w-4/5 animate-pulse" />
+              </div>
+
+              {/* Features & Benefits Split Skeleton */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                {/* Features Skeleton */}
+                <div className="space-y-3">
+                  <div className="h-3 bg-slate-800 rounded w-32 animate-pulse" />
+                  <div className="space-y-2.5">
+                    {[1, 2, 3].map((f) => (
+                      <div key={f} className="flex items-center space-x-2.5">
+                        <div className="w-4 h-4 bg-cyan-500/20 rounded-full flex-shrink-0 animate-pulse" />
+                        <div className="h-3 bg-slate-800 rounded w-10/12 animate-pulse" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Benefits Skeleton */}
+                <div className="space-y-3">
+                  <div className="h-3 bg-slate-800 rounded w-32 animate-pulse" />
+                  <div className="space-y-2.5">
+                    {[1, 2, 3].map((b) => (
+                      <div key={b} className="flex items-center space-x-2.5">
+                        <div className="w-4 h-4 bg-emerald-500/20 rounded-full flex-shrink-0 animate-pulse" />
+                        <div className="h-3 bg-slate-800 rounded w-11/12 animate-pulse" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Industries Served Skeleton */}
+              <div className="pt-4 border-t border-slate-900 space-y-3">
+                <div className="h-3 bg-slate-800 rounded w-36 animate-pulse" />
+                <div className="flex flex-wrap gap-2">
+                  {[1, 2, 3, 4].map((ind) => (
+                    <div key={ind} className="h-6 bg-slate-950 border border-slate-800 rounded-lg w-20 animate-pulse" />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Skeleton */}
+            <div className="h-20 bg-slate-950/80 border border-slate-900/60 rounded-2xl w-full animate-pulse" />
+          </div>
+        </section>
+      ) : (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: List of Services by Category */}
+          <div className="lg:col-span-4 space-y-6">
+            {categories.map((cat, catIdx) => (
+              <div key={catIdx} className="space-y-2">
+                <h4 className="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-widest px-3">{cat}</h4>
+                <div className="space-y-1">
+                  {servicesList
+                    .filter((s) => s.category === cat)
+                    .map((srv) => (
+                      <button
+                        key={srv.id}
+                        onClick={() => setActiveService(srv.id)}
+                        className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider block transition-all cursor-pointer ${
+                          activeService === srv.id
+                            ? "bg-gradient-to-r from-blue-900/60 to-slate-900 border-l-4 border-blue-400 text-white shadow-md font-bold"
+                            : "text-slate-400 hover:text-white hover:bg-slate-900/50"
+                        }`}
+                      >
+                        {srv.title.replace("Primary Insurance (", "").replace(")", "").replace("Solutions", "").trim()}
+                      </button>
+                    ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Column: Detailed Service Panel with animations */}
+          <div className="lg:col-span-8 bg-slate-900/40 p-6 sm:p-10 rounded-3xl border border-slate-800/80 space-y-8 min-h-[500px] flex flex-col justify-between">
+            <div className="space-y-6">
+              {/* Service Category & Title */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+                <div>
+                  <span className="text-[10px] font-bold font-mono text-cyan-400 tracking-wider uppercase">{selectedService.category}</span>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">{selectedService.title}</h2>
+                </div>
+                <div className="bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-lg text-blue-400 font-mono text-xs font-bold text-center self-start sm:self-center">
+                  Capacity Limit: {selectedService.capacityLimit}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {selectedService.desc}
+              </p>
+
+              {/* Features & Benefits Split */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                {/* Features */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Underwriting Features</h4>
+                  <ul className="space-y-2">
+                    {selectedService.features.map((feat, idx) => (
+                      <li key={idx} className="flex items-start space-x-2.5 text-xs text-slate-300">
+                        <Zap className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Benefits */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Measurable Benefits</h4>
+                  <ul className="space-y-2">
+                    {selectedService.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-start space-x-2.5 text-xs text-slate-300">
+                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Industries served */}
+              <div className="pt-4 border-t border-slate-900 space-y-2">
+                <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Core Industries Served</h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedService.industries.map((ind, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-slate-950 border border-slate-800 text-slate-400 text-[10px] font-mono py-1 px-2.5 rounded-lg"
                     >
-                      {srv.title.replace("Primary Insurance (", "").replace(")", "").replace("Solutions", "").trim()}
-                    </button>
+                      {ind}
+                    </span>
                   ))}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Right Column: Detailed Service Panel with animations */}
-        <div className="lg:col-span-8 bg-slate-900/40 p-6 sm:p-10 rounded-3xl border border-slate-800/80 space-y-8 min-h-[500px] flex flex-col justify-between">
-          <div className="space-y-6">
-            {/* Service Category & Title */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+            {/* Underwriting Contact CTA */}
+            <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-900/60 flex flex-col sm:flex-row justify-between items-center gap-4 mt-8">
               <div>
-                <span className="text-[10px] font-bold font-mono text-cyan-400 tracking-wider uppercase">{selectedService.category}</span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">{selectedService.title}</h2>
+                <h4 className="text-xs font-bold text-white">Require custom treaty structuring?</h4>
+                <p className="text-[11px] text-slate-400 mt-0.5">Connect directly with our Slidell-based risk advisory panel.</p>
               </div>
-              <div className="bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-lg text-blue-400 font-mono text-xs font-bold text-center self-start sm:self-center">
-                Capacity Limit: {selectedService.capacityLimit}
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              {selectedService.desc}
-            </p>
-
-            {/* Features & Benefits Split */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-              {/* Features */}
-              <div className="space-y-3">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Underwriting Features</h4>
-                <ul className="space-y-2">
-                  {selectedService.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start space-x-2.5 text-xs text-slate-300">
-                      <Zap className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Benefits */}
-              <div className="space-y-3">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Measurable Benefits</h4>
-                <ul className="space-y-2">
-                  {selectedService.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start space-x-2.5 text-xs text-slate-300">
-                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Industries served */}
-            <div className="pt-4 border-t border-slate-900 space-y-2">
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Core Industries Served</h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedService.industries.map((ind, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-slate-950 border border-slate-800 text-slate-400 text-[10px] font-mono py-1 px-2.5 rounded-lg"
-                  >
-                    {ind}
-                  </span>
-                ))}
-              </div>
+              <a
+                href="mailto:hr.ericwilliams@gmail.com?subject=Munich RE Underwriting Inquiry"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all flex items-center space-x-2 cursor-pointer self-stretch sm:self-auto justify-center text-center"
+              >
+                <span>Initiate Audit Request</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
-
-          {/* Underwriting Contact CTA */}
-          <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-900/60 flex flex-col sm:flex-row justify-between items-center gap-4 mt-8">
-            <div>
-              <h4 className="text-xs font-bold text-white">Require custom treaty structuring?</h4>
-              <p className="text-[11px] text-slate-400 mt-0.5">Connect directly with our Slidell-based risk advisory panel.</p>
-            </div>
-            <a
-              href="mailto:hr.ericwilliams@gmail.com?subject=Munich RE Underwriting Inquiry"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all flex items-center space-x-2 cursor-pointer self-stretch sm:self-auto justify-center text-center"
-            >
-              <span>Initiate Audit Request</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ Accordion Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pt-12">

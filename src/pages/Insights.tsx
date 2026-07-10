@@ -13,6 +13,15 @@ export default function Insights({ searchQuery, setSearchQuery }: InsightsProps)
   const [selectedArticle, setSelectedArticle] = useState<BlogPostItem | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
 
   // Filter lists
   const categories = ["All", "Trends", "White Paper", "Research", "Announcement"];
@@ -97,7 +106,41 @@ export default function Insights({ searchQuery, setSearchQuery }: InsightsProps)
 
       {/* Articles Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredArticles.length > 0 ? (
+        {isLoading ? (
+          // Custom Skeleton Loading Screen Cards
+          [1, 2, 3].map((idx) => (
+            <div
+              key={idx}
+              className="glass-panel p-6 rounded-2xl flex flex-col justify-between space-y-6"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  {/* Category Skeleton */}
+                  <div className="h-2.5 bg-blue-500/20 rounded w-16 animate-pulse" />
+                  {/* Date Skeleton */}
+                  <div className="h-2.5 bg-slate-800 rounded w-12 animate-pulse" />
+                </div>
+                {/* Title Skeleton */}
+                <div className="space-y-2">
+                  <div className="h-4 bg-slate-800 rounded w-11/12 animate-pulse" />
+                  <div className="h-4 bg-slate-800 rounded w-2/3 animate-pulse" />
+                </div>
+                {/* Summary Skeleton */}
+                <div className="space-y-2 pt-2">
+                  <div className="h-3 bg-slate-800/60 rounded w-full animate-pulse" />
+                  <div className="h-3 bg-slate-800/60 rounded w-11/12 animate-pulse" />
+                  <div className="h-3 bg-slate-800/60 rounded w-4/5 animate-pulse" />
+                </div>
+              </div>
+
+              {/* Footer row skeleton */}
+              <div className="border-t border-slate-900 mt-6 pt-3 flex items-center justify-between">
+                <div className="h-2.5 bg-slate-800 rounded w-20 animate-pulse" />
+                <div className="h-2.5 bg-slate-800 rounded w-10 animate-pulse" />
+              </div>
+            </div>
+          ))
+        ) : filteredArticles.length > 0 ? (
           filteredArticles.map((article) => (
             <div
               key={article.id}
